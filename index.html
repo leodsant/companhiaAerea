@@ -18,18 +18,20 @@
   <main class="relative h-dvh w-full overflow-hidden">
 
     <div class="absolute inset-0 z-0">
-      <video class="bg-cover w-full" autoplay muted loop src="./videos/video.mp4"></video>
+      <video class="object-fill h-dvh w-full" autoplay muted loop src="./videos/video.mp4"></video>
     </div>
 
     <div class="absolute inset-0 z-20 flex items-center justify-center">
-      <div id="janela" class="h-dvh w-full bg-[url('/images/janela.webp')] bg-cover bg-center scale-130"></div>
+      <div id="janela" class="h-dvh w-full bg-[url('/images/janela.webp')] bg-center bg-cover lg:scale-130"></div>
     </div>
+    
+    <div id="menu-btn" class="absolute z-30 end-0 text-white border rounded-md w-15 h-15 m-5 cursor-pointer text-4xl flex items-center justify-center"><i class="fa-solid fa-bars"></i></div>
 
-    <section class="absolute inset-0 z-30 text-white mx-36 mt-10 flex flex-col">
+    <section class="absolute inset-0 z-30 text-white mx-36 mt-10 flex flex-col items-center md:items-stretch">
       <div class="absolute w-full h-210 flex items-center justify-center">
-        <h1 id="logo" class="text-3xl font-light">Companhia Aérea</h1>
+        <h1 id="logo" class="text-2xl md:text-3xl font-light text-center">Companhia Aérea</h1>
       </div>
-      <header class="grid grid-cols-2 gap-162.5 font-semibold">
+      <header class="hidden md:grid grid-cols-2 gap-162.5 font-semibold">
         <div class="w-full flex justify-between">
           <a class="link" href="">Sobre</a>
           <a class="link" href="">Nossos Frota</a>
@@ -42,7 +44,7 @@
         </div>
       </header>
       <div class="conteudo flex flex-col">
-        <div class="hero-text flex flex-col justify-between h-120 content-between font-medium text-8xl mt-30">
+        <div class="hero-text flex flex-col justify-between h-120 w-100 md:w-full font-medium text-2xl md:text-8xl mt-30">
           <h1 class="w-2xl">Nós somos movimento</h1>
           <h1 class="self-end text-end w-2xl">Nós somos distinção</h1>
         </div>
@@ -62,12 +64,11 @@
           </div>
         </div>
       </div>
-      <div class="flex justify-center mt-5">
+      <div class="flex justify-center mt-15 md:mt-5">
         <div class="btn bg-white/15 rounded-full px-2 w-fit gap-3 flex flex-row">
-          <button class="py-3 px-8 text-black my-2 rounded-full font-semibold bg-white cursor-pointer"><p>Reserve o
-            Voo</p></button>
+          <button class="py-3 px:15 md:px-4 text-black my-2 rounded-full font-semibold bg-white cursor-pointer"><p class="px-10 md:px-4 whitespace-nowrap md:whitespace-normal">Reserve o Voo</p></button>
           <button id="aviao-btn"
-            class="py-3 px-3.5 text-black my-2 rounded-full font-semibold bg-white overflow-hidden cursor-pointer"><i
+            class="flex items-center justify-center py-3 px-3.5 text-black my-2 rounded-full font-semibold bg-white overflow-hidden cursor-pointer"><i
               id="aviao" class="fa-solid fa-plane -rotate-45"></i></button>
         </div>
       </div>

@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     ease: "power1.inOut"
   })
 
-  let tl = gsap.timeline();
+  // let tl = gsap.timeline();
 
   tl.from("header div a", {
     opacity: 0,

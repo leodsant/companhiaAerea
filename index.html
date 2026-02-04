@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Companhia Aérea</title>
+  <link href="./src/output.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Zalando+Sans+Expanded:ital,wght@0,200..900;1,200..900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body class="font">
+
+  <main class="relative h-dvh w-full overflow-hidden">
+
+    <div class="absolute inset-0 z-0">
+      <video class="bg-cover w-full" autoplay muted loop src="./videos/video.mp4"></video>
+    </div>
+
+    <div class="absolute inset-0 z-20 flex items-center justify-center">
+      <div id="janela" class="h-dvh w-full bg-[url('/images/janela.webp')] bg-cover bg-center scale-130"></div>
+    </div>
+
+    <section class="absolute inset-0 z-30 text-white mx-36 mt-10 flex flex-col">
+      <div class="absolute w-full h-210 flex items-center justify-center">
+        <h1 id="logo" class="text-3xl font-light">Companhia Aérea</h1>
+      </div>
+      <header class="grid grid-cols-2 gap-162.5 font-semibold">
+        <div class="w-full flex justify-between">
+          <a class="link" href="">Sobre</a>
+          <a class="link" href="">Nossos Frota</a>
+          <a class="link" href="">Vantagens</a>
+          <a class="link" href="">Global</a>
+        </div>
+        <div class="w-full flex justify-between">
+          <a href="">+55 11 9999 9999</a>
+          <a href="">info@companhiaaerea.com</a>
+        </div>
+      </header>
+      <div class="conteudo flex flex-col">
+        <div class="hero-text flex flex-col justify-between h-120 content-between font-medium text-8xl mt-30">
+          <h1 class="w-2xl">Nós somos movimento</h1>
+          <h1 class="self-end text-end w-2xl">Nós somos distinção</h1>
+        </div>
+        <div class="hero-p flex flex-col w-md gap-7 absolute top-125">
+          <h1 class="font-medium text-3xl w-70">Sua liberdade para aproveitar a vida</h1>
+          <div class="border border-b w-10"></div>
+          <p class="font-medium">Cada voo é projetado em torno do seu conforto, do seu tempo e das suas ambições — para
+            que você possa focar no que realmente importa, enquanto cuidamos de todo o resto.</p>
+        </div>
+        <div class="hero-ad flex flex-col self-end w-110 mt-25">
+          <div class="border border-b w-full"></div>
+          <div class="flex flex-row justify-between uppercase font-semibold text-xs mt-8">
+            <div class="flex items-center gap-3"><i id="seta" class="fa-solid fa-angles-down"></i>
+              <h1>Role para baixo</h1>
+            </div>
+            <h1>Para começar a jornada</h1>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-center mt-5">
+        <div class="btn bg-white/15 rounded-full px-2 w-fit gap-3 flex flex-row">
+          <button class="py-3 px-8 text-black my-2 rounded-full font-semibold bg-white cursor-pointer"><p>Reserve o
+            Voo</p></button>
+          <button id="aviao-btn"
+            class="py-3 px-3.5 text-black my-2 rounded-full font-semibold bg-white overflow-hidden cursor-pointer"><i
+              id="aviao" class="fa-solid fa-plane -rotate-45"></i></button>
+        </div>
+      </div>
+    </section>
+    <div class="absolute flex justify-center items-center h-dvh text-white font-medium mx-30 text-7xl text-balance">
+      <p id="text">Mais do que um voo, entregamos uma experiência pensada nos mínimos detalhes.
+        Da escolha da aeronave ao serviço a bordo, tudo é cuidadosamente planejado para refletir seu estilo de vida, seu
+        tempo e sua forma de viver o mundo.</p>
+    </div>
+  </main>
+
+  <section class="h-dvh">
+
+  </section>
+
+
+
+  <script src="./js/script.js"></script>
+  <script src="https://kit.fontawesome.com/b522bdfe69.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/SplitText.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/Observer.min.js"></script>
+</body>
+
+</html>

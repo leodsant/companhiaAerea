@@ -15,6 +15,8 @@
 
 <body class="font">
 
+  <div id="cursor" class="rounded-full w-20 h-20 -left-9 -top-7 invert fixed z-50"></div>
+
   <main class="relative h-dvh w-full overflow-hidden">
 
     <div class="absolute inset-0 z-0">
@@ -22,16 +24,46 @@
     </div>
 
     <div class="absolute inset-0 z-20 flex items-center justify-center">
-      <div id="janela" class="h-dvh w-full bg-[url('/images/janela.webp')] bg-center bg-cover lg:scale-130"></div>
+      <div id="janela" class="h-dvh w-full bg-[url('/images/janela.webp')] bg-center bg-cover scale-100 lg:scale-130"></div>
     </div>
     
-    <div id="menu-btn" class="absolute z-30 end-0 text-white border rounded-md w-15 h-15 m-5 cursor-pointer text-4xl flex items-center justify-center"><i class="fa-solid fa-bars"></i></div>
+    <div id="menu-btn" class="absolute z-30 end-0 text-white border border-white/20 rounded-xl w-10 h-10 m-5 cursor-pointer text-lg flex lg:hidden items-center justify-center"><i class="fa-solid fa-bars"></i></div>
 
-    <section class="absolute inset-0 z-30 text-white mx-36 mt-10 flex flex-col items-center md:items-stretch">
-      <div class="absolute w-full h-210 flex items-center justify-center">
-        <h1 id="logo" class="text-2xl md:text-3xl font-light text-center">Companhia Aérea</h1>
+    <section id="menu" class="hidden h-dvh relative z-40 bg-linear-to-b from-black/70 via-black/20 to-black/70">
+      <div class="h-100 p-5 flex flex-col items-end gap-2">
+        <div id="close-btn" class="text-white border border-white/20 rounded-xl w-10 h-10 cursor-pointer text-sm flex items-center justify-center mb-3"><i class="fa-solid fa-x"></i></div>
+        <div class="nav flex flex-row gap-2">
+          <div class="bg-white rounded-xl px-4 py-2 text-xl font-medium"><a href="">Sobre</a></div>
+          <div class="bg-white rounded-full flex items-center justify-center px-2.5 text-xl"><i class="fa-solid fa-arrow-right"></i></div>
+        </div>
+        <div class="nav flex flex-row gap-2">
+          <div class="bg-white rounded-xl px-4 py-2 text-xl font-medium"><a href="">Nossa Frota</a></div>
+          <div class="bg-white rounded-full flex items-center justify-center px-2.5 text-xl"><i class="fa-solid fa-arrow-right"></i></div>
+        </div>
+        <div class="nav flex flex-row gap-2">
+          <div class="bg-white rounded-xl px-4 py-2 text-xl font-medium"><a href="">Vantagens</a></div>
+          <div class="bg-white rounded-full flex items-center justify-center px-2.5 text-xl"><i class="fa-solid fa-arrow-right"></i></div>
+        </div>
+        <div class="nav flex flex-row gap-2">
+          <div class="bg-white rounded-xl px-4 py-2 text-xl font-medium"><a href="">Global</a></div>
+          <div class="bg-white rounded-full flex items-center justify-center px-2.5 text-xl"><i class="fa-solid fa-arrow-right"></i></div>
+        </div>
+        <div class="nav flex flex-row gap-2">
+          <div class="bg-white rounded-xl px-4 py-2 text-xl font-medium"><a href="">+55 11 99999 9999</a></div>
+          <div class="rounded-full text-transparent flex items-center justify-center px-2.5 text-xl"><i class="fa-solid fa-arrow-right"></i></div>
+        </div>
+        <div class="nav flex flex-row gap-2">
+          <div class="bg-white rounded-xl px-4 py-2 text-xl font-medium"><a href="">info@companhiaaerea.com</a></div>
+          <div class="rounded-full text-transparent flex items-center justify-center px-2.5 text-xl"><i class="fa-solid fa-arrow-right"></i></div>
+        </div>
       </div>
-      <header class="hidden md:grid grid-cols-2 gap-162.5 font-semibold">
+    </section>
+
+    <section class="absolute inset-0 text-white mx-10 lg:mx-36 mt-10 flex flex-col items-center lg:items-stretch">
+      <div class="absolute z-40 w-full h-210 flex items-center justify-center">
+        <h1 id="logo" class="w-full text-2xl lg:text-3xl font-light text-center">Companhia Aérea</h1>
+      </div>
+      <header class="hidden z-30 lg:grid grid-cols-2 gap-162.5 font-semibold">
         <div class="w-full flex justify-between">
           <a class="link" href="">Sobre</a>
           <a class="link" href="">Nossos Frota</a>
@@ -39,22 +71,22 @@
           <a class="link" href="">Global</a>
         </div>
         <div class="w-full flex justify-between">
-          <a href="">+55 11 9999 9999</a>
+          <a href="">+55 11 99999 9999</a>
           <a href="">info@companhiaaerea.com</a>
         </div>
       </header>
-      <div class="conteudo flex flex-col">
-        <div class="hero-text flex flex-col justify-between h-120 w-100 md:w-full font-medium text-2xl md:text-8xl mt-30">
-          <h1 class="w-2xl">Nós somos movimento</h1>
-          <h1 class="self-end text-end w-2xl">Nós somos distinção</h1>
+      <div class="z-30 conteudo flex flex-col">
+        <div class="hero-text flex flex-col justify-between h-170 lg:h-120 w-100 lg:w-full font-medium text-5xl lg:text-8xl mt-18 lg:mt-30">
+          <h1 class="w-xs lg:w-2xl">Nós somos movimento</h1>
+          <h1 class="self-end text-end w-xs lg:w-2xl">Nós somos distinção</h1>
         </div>
-        <div class="hero-p flex flex-col w-md gap-7 absolute top-125">
+        <div class="hero-p hidden lg:flex flex-col w-lg gap-7 absolute top-125">
           <h1 class="font-medium text-3xl w-70">Sua liberdade para aproveitar a vida</h1>
           <div class="border border-b w-10"></div>
           <p class="font-medium">Cada voo é projetado em torno do seu conforto, do seu tempo e das suas ambições — para
             que você possa focar no que realmente importa, enquanto cuidamos de todo o resto.</p>
         </div>
-        <div class="hero-ad flex flex-col self-end w-110 mt-25">
+        <div class="hero-ad hidden lg:flex flex-col self-end w-110 mt-25">
           <div class="border border-b w-full"></div>
           <div class="flex flex-row justify-between uppercase font-semibold text-xs mt-8">
             <div class="flex items-center gap-3"><i id="seta" class="fa-solid fa-angles-down"></i>
@@ -64,16 +96,16 @@
           </div>
         </div>
       </div>
-      <div class="flex justify-center mt-15 md:mt-5">
+      <div class="flex fixed self-center bottom-8 lg:bottom-12 z-40 justify-center">
         <div class="btn bg-white/15 rounded-full px-2 w-fit gap-3 flex flex-row">
-          <button class="py-3 px:15 md:px-4 text-black my-2 rounded-full font-semibold bg-white cursor-pointer"><p class="px-10 md:px-4 whitespace-nowrap md:whitespace-normal">Reserve o Voo</p></button>
+          <button class="py-3 px:5 lg:px-4 text-sm lg:text-base text-black my-2 rounded-full font-semibold bg-white cursor-pointer"><p class="px-5 lg:px-4 whitespace-nowrap lg:whitespace-normal">Reserve o Voo</p></button>
           <button id="aviao-btn"
             class="flex items-center justify-center py-3 px-3.5 text-black my-2 rounded-full font-semibold bg-white overflow-hidden cursor-pointer"><i
               id="aviao" class="fa-solid fa-plane -rotate-45"></i></button>
         </div>
       </div>
     </section>
-    <div class="absolute flex justify-center items-center h-dvh text-white font-medium mx-30 text-7xl text-balance">
+    <div class="absolute flex justify-center items-center h-dvh text-white font-medium mx-10 lg:mx-30 text-3xl lg:text-7xl text-balance">
       <p id="text">Mais do que um voo, entregamos uma experiência pensada nos mínimos detalhes.
         Da escolha da aeronave ao serviço a bordo, tudo é cuidadosamente planejado para refletir seu estilo de vida, seu
         tempo e sua forma de viver o mundo.</p>

@@ -62,47 +62,47 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
   // let tl = gsap.timeline();
 
-  tl.from("header div a", {
-    opacity: 0,
-    y: -10,
-    delay: 1,
-    duration: 0.5,
-    stagger: 0.2,
-    ease: "power2.out"
-  })
+  // tl.from("header div a", {
+  //   opacity: 0,
+  //   y: -10,
+  //   delay: 1,
+  //   duration: 0.5,
+  //   stagger: 0.2,
+  //   ease: "power2.out"
+  // })
 
-  tl.from(".hero-p", {
-    y: 10,
-    opacity: 0,
-    duration: 0.5,
-    ease: "power2.out"
-  })
+  // tl.from(".hero-p", {
+  //   y: 10,
+  //   opacity: 0,
+  //   duration: 0.5,
+  //   ease: "power2.out"
+  // })
 
-  tl.from(".hero-ad", {
-    y: 10,
-    opacity: 0,
-    duration: 0.5,
-    ease: "power2.out"
-  }, "-=0.5")
+  // tl.from(".hero-ad", {
+  //   y: 10,
+  //   opacity: 0,
+  //   duration: 0.5,
+  //   ease: "power2.out"
+  // }, "-=0.5")
 
-  tl.from(".hero-text h1", {
-    opacity: 0,
-    duration: 1,
-    stagger: 0.3,
-    ease: "power2.out"
-  })
+  // tl.from(".hero-text h1", {
+  //   opacity: 0,
+  //   duration: 1,
+  //   stagger: 0.3,
+  //   ease: "power2.out"
+  // })
 
-  tl.from("#logo", {
-    opacity: 0,
-    ease: "power1.in"
-  }, "-=0.5")
+  // tl.from("#logo", {
+  //   opacity: 0,
+  //   ease: "power1.in"
+  // }, "-=0.5")
 
-  tl.from(".btn", {
-    y: 10,
-    opacity: 0,
-    duration: 0.5,
-    ease: "power2.out"
-  })
+  // tl.from(".btn", {
+  //   y: 10,
+  //   opacity: 0,
+  //   duration: 0.5,
+  //   ease: "power2.out"
+  // })
 
   gsap.utils.toArray(".link").forEach(link => {
     Observer.create({
@@ -169,6 +169,75 @@ document.addEventListener("DOMContentLoaded", (event) => {
     }
   })
 
+  
+  
+
+const menuBtn  = document.querySelector("#menu-btn");
+const closeBtn = document.querySelector("#close-btn");
+const menu = document.querySelector("#menu");
+
+menuBtn.addEventListener("click", () => {
+  menu.classList.remove("hidden");
+
+  gsap.fromTo(
+    "#menu",
+    { opacity: 0 },
+    {
+      opacity: 1,
+      duration: 0.3,
+      ease: "power2.out"
+    }
+  );
+
+  gsap.fromTo(
+    ".nav",
+    { x: -80, opacity: 0 },
+    {
+      x: 0,
+      opacity: 1,
+      stagger: 0.1,
+      duration: 0.5,
+      ease: "power2.out"
+    }
+  );
+
+  menuBtn.classList.add("hidden");
+});
+
+closeBtn.addEventListener("click", () => {
+  gsap.to(".nav", {
+    x: -80,
+    opacity: 0,
+    stagger: 0.1,
+    duration: 0.3,
+    ease: "power2.in"
+  });
+
+  gsap.to("#menu", {
+    opacity: 0,
+    duration: 0.3,
+    ease: "power2.in",
+    onComplete: () => {
+      menu.classList.add("hidden");
+
+      gsap.set(["#menu", ".nav"], { clearProps: "all" });
+    }
+  });
+
+  menuBtn.classList.remove("hidden");
+});
+
+const body = document.querySelector("body");
+
+body.addEventListener("mousemove", function(cursor) {
+  gsap.to("#cursor", {
+    x: cursor.x,
+    y: cursor.y,
+    ease: "back.out",
+    duration: 1
+  })
+  
+})
 
 
 

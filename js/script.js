@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", (event) => {
-  gsap.registerPlugin(ScrollTrigger)
+  gsap.registerPlugin(ScrollTrigger, Observer, SplitText);
 
   gsap.to("#janela", {
     scale: 5.6,
@@ -60,114 +60,111 @@ document.addEventListener("DOMContentLoaded", (event) => {
     ease: "power1.inOut"
   })
 
-  // let tl = gsap.timeline();
+  let tl = gsap.timeline();
 
-  // tl.from("header div a", {
-  //   opacity: 0,
-  //   y: -10,
-  //   delay: 1,
-  //   duration: 0.5,
-  //   stagger: 0.2,
-  //   ease: "power2.out"
-  // })
-
-  // tl.from(".hero-p", {
-  //   y: 10,
-  //   opacity: 0,
-  //   duration: 0.5,
-  //   ease: "power2.out"
-  // })
-
-  // tl.from(".hero-ad", {
-  //   y: 10,
-  //   opacity: 0,
-  //   duration: 0.5,
-  //   ease: "power2.out"
-  // }, "-=0.5")
-
-  // tl.from(".hero-text h1", {
-  //   opacity: 0,
-  //   duration: 1,
-  //   stagger: 0.3,
-  //   ease: "power2.out"
-  // })
-
-  // tl.from("#logo", {
-  //   opacity: 0,
-  //   ease: "power1.in"
-  // }, "-=0.5")
-
-  // tl.from(".btn", {
-  //   y: 10,
-  //   opacity: 0,
-  //   duration: 0.5,
-  //   ease: "power2.out"
-  // })
-
-  gsap.utils.toArray(".link").forEach(link => {
-    Observer.create({
-      target: link,
-      type: "pointer",
-
-      onHover(self) {
-        gsap.to(self.target, {
-          scale: 1.1,
-          y: -5,
-          duration: 0.3,
-          ease: "power2.out",
-          overwrite: "auto"
-        })
-      },
-
-      onHoverEnd(self) {
-        gsap.to(self.target, {
-          scale: 1,
-          y: 0,
-          duration: 0.2,
-          ease: "power2.out",
-          overwrite: "auto"
-        })
-      }
-    })
+  tl.from("header div a", {
+    opacity: 0,
+    y: -10,
+    delay: 1,
+    duration: 0.5,
+    stagger: 0.2,
+    ease: "power2.out"
   })
 
-  let aviaoTween;
+  tl.from(".hero-p", {
+    y: 10,
+    opacity: 0,
+    duration: 0.5,
+    ease: "power2.out"
+  })
 
+  tl.from(".hero-ad", {
+    y: 10,
+    opacity: 0,
+    duration: 0.5,
+    ease: "power2.out"
+  }, "-=0.5")
+
+  tl.from(".hero-text h1", {
+    opacity: 0,
+    duration: 1,
+    stagger: 0.3,
+    ease: "power2.out"
+  })
+
+  tl.from("#logo", {
+    opacity: 0,
+    ease: "power1.in"
+  }, "-=0.5")
+
+  tl.from(".btn", {
+    y: 10,
+    opacity: 0,
+    duration: 0.5,
+    ease: "power2.out"
+  })
+
+gsap.utils.toArray(".link").forEach(link => {
   Observer.create({
-    target: ".btn",
+    target: link,
     type: "pointer",
-    onHover: () => { 
-      aviaoTween = gsap.fromTo("#aviao", {
-        x: -5,
-        y: 5
-      }, {
-        x: 5,
+
+    onHover(self) {
+      gsap.to(self.target, {
+        scale: 1.1,
         y: -5,
-        yoyo: true,
-        repeat: -1
-      })
+        duration: 0.3,
+        ease: "power2.out",
+        overwrite: "auto"
+      });
+    },
 
-      gsap.to("button p", {
-        scale: 1.1
-      })
-       },
-
-    onHoverEnd: () => { if (aviaoTween) {
-      aviaoTween.kill();
-    }
-      gsap.to("#aviao", {
-        x: 0,
-        y: 0,
-        yoyo: false,
-        repeat: 0
-      })
-
-      gsap.to("button p", {
+    onHoverEnd(self) {
+      gsap.to(self.target, {
         scale: 1,
-        duration: 0.2
-      })
+        y: 0,
+        duration: 0.2,
+        ease: "power2.out",
+        overwrite: "auto"
+      });
     }
-  })
+  });
+});
+
+
+
+  const aviaoTween = gsap.timeline({
+  paused: true,
+  repeat: -1,
+  yoyo: true
+});
+
+aviaoTween
+  .fromTo(
+    "#aviao",
+    { x: 0, y: 0 },
+    { x: 5, y: -5, duration: 0.6, ease: "power1.inOut" },
+    0
+  )
+  .to(
+    "button p",
+    { scale: 1.1, duration: 0.6, ease: "power1.inOut" },
+    0
+  );
+
+Observer.create({
+  target: ".btn",
+  type: "pointer",
+
+  onHover() {
+    aviaoTween.play();
+  },
+
+  onHoverEnd() {
+    aviaoTween.pause(0);
+  }
+});
+
 
   
   

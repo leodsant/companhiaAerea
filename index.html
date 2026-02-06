@@ -15,68 +15,82 @@
 
 <body class="font">
 
-  <div id="cursor" class="rounded-full w-20 h-20 -left-9 -top-7 invert fixed z-50"></div>
+  <div id="cursor" class="pointer-events-none rounded-full w-20 h-20 -left-9 -top-7 mix-blend-exclusion bg-white hidden lg:block fixed z-50"></div>
 
   <main class="relative h-dvh w-full overflow-hidden">
 
     <div class="absolute inset-0 z-0">
-      <video class="object-fill h-dvh w-full" autoplay muted loop src="./videos/video.mp4"></video>
+      <video class="object-fill h-dvh w-full pointer-events-none" autoplay muted loop src="./videos/video.mp4"></video>
     </div>
 
     <div class="absolute inset-0 z-20 flex items-center justify-center">
-      <div id="janela" class="h-dvh w-full bg-[url('/images/janela.webp')] bg-center bg-cover scale-100 lg:scale-130"></div>
+      <div id="janela"
+        class="h-dvh w-full bg-[url('/images/janela.webp')] bg-center bg-cover scale-100 lg:scale-130 pointer-events-none">
+      </div>
     </div>
-    
-    <div id="menu-btn" class="absolute z-30 end-0 text-white border border-white/20 rounded-xl w-10 h-10 m-5 cursor-pointer text-lg flex lg:hidden items-center justify-center"><i class="fa-solid fa-bars"></i></div>
+
+    <div id="menu-btn"
+      class="absolute z-30 end-0 text-white border border-white/20 rounded-xl w-10 h-10 m-5 cursor-pointer text-lg flex lg:hidden items-center justify-center">
+      <i class="fa-solid fa-bars"></i></div>
 
     <section id="menu" class="hidden h-dvh relative z-40 bg-linear-to-b from-black/70 via-black/20 to-black/70">
       <div class="h-100 p-5 flex flex-col items-end gap-2">
-        <div id="close-btn" class="text-white border border-white/20 rounded-xl w-10 h-10 cursor-pointer text-sm flex items-center justify-center mb-3"><i class="fa-solid fa-x"></i></div>
+        <div id="close-btn"
+          class="text-white border border-white/20 rounded-xl w-10 h-10 cursor-pointer text-sm flex items-center justify-center mb-3">
+          <i class="fa-solid fa-x"></i></div>
         <div class="nav flex flex-row gap-2">
           <div class="bg-white rounded-xl px-4 py-2 text-xl font-medium"><a href="">Sobre</a></div>
-          <div class="bg-white rounded-full flex items-center justify-center px-2.5 text-xl"><i class="fa-solid fa-arrow-right"></i></div>
+          <div class="bg-white rounded-full flex items-center justify-center px-2.5 text-xl"><i
+              class="fa-solid fa-arrow-right"></i></div>
         </div>
         <div class="nav flex flex-row gap-2">
           <div class="bg-white rounded-xl px-4 py-2 text-xl font-medium"><a href="">Nossa Frota</a></div>
-          <div class="bg-white rounded-full flex items-center justify-center px-2.5 text-xl"><i class="fa-solid fa-arrow-right"></i></div>
+          <div class="bg-white rounded-full flex items-center justify-center px-2.5 text-xl"><i
+              class="fa-solid fa-arrow-right"></i></div>
         </div>
         <div class="nav flex flex-row gap-2">
           <div class="bg-white rounded-xl px-4 py-2 text-xl font-medium"><a href="">Vantagens</a></div>
-          <div class="bg-white rounded-full flex items-center justify-center px-2.5 text-xl"><i class="fa-solid fa-arrow-right"></i></div>
+          <div class="bg-white rounded-full flex items-center justify-center px-2.5 text-xl"><i
+              class="fa-solid fa-arrow-right"></i></div>
         </div>
         <div class="nav flex flex-row gap-2">
           <div class="bg-white rounded-xl px-4 py-2 text-xl font-medium"><a href="">Global</a></div>
-          <div class="bg-white rounded-full flex items-center justify-center px-2.5 text-xl"><i class="fa-solid fa-arrow-right"></i></div>
+          <div class="bg-white rounded-full flex items-center justify-center px-2.5 text-xl"><i
+              class="fa-solid fa-arrow-right"></i></div>
         </div>
         <div class="nav flex flex-row gap-2">
           <div class="bg-white rounded-xl px-4 py-2 text-xl font-medium"><a href="">+55 11 99999 9999</a></div>
-          <div class="rounded-full text-transparent flex items-center justify-center px-2.5 text-xl"><i class="fa-solid fa-arrow-right"></i></div>
+          <div class="rounded-full text-transparent flex items-center justify-center px-2.5 text-xl"><i
+              class="fa-solid fa-arrow-right"></i></div>
         </div>
         <div class="nav flex flex-row gap-2">
           <div class="bg-white rounded-xl px-4 py-2 text-xl font-medium"><a href="">info@companhiaaerea.com</a></div>
-          <div class="rounded-full text-transparent flex items-center justify-center px-2.5 text-xl"><i class="fa-solid fa-arrow-right"></i></div>
+          <div class="rounded-full text-transparent flex items-center justify-center px-2.5 text-xl"><i
+              class="fa-solid fa-arrow-right"></i></div>
         </div>
       </div>
     </section>
-
-    <section class="absolute inset-0 text-white mx-10 lg:mx-36 mt-10 flex flex-col items-center lg:items-stretch">
+    
+    <header class="fixed hidden z-30 lg:grid grid-cols-2 text-white w-full px-36 mt-10 gap-162.5 font-semibold">
+      <div class="w-full flex justify-between">
+        <a class="link" href="">Sobre</a>
+        <a class="link" href="">Nossos Frota</a>
+        <a class="link" href="">Vantagens</a>
+        <a class="link" href="">Global</a>
+      </div>
+      <div class="w-full flex justify-between">
+        <a href="">+55 11 99999 9999</a>
+        <a href="">info@companhiaaerea.com</a>
+      </div>
+    </header>
+    <section
+      class="absolute inset-x-0 inset-y-5 text-white mx-10 lg:mx-36 mt-10 flex flex-col items-center lg:items-stretch">
       <div class="absolute z-40 w-full h-210 flex items-center justify-center">
         <h1 id="logo" class="w-full text-2xl lg:text-3xl font-light text-center">Companhia Aérea</h1>
       </div>
-      <header class="hidden z-30 lg:grid grid-cols-2 gap-162.5 font-semibold">
-        <div class="w-full flex justify-between">
-          <a class="link" href="">Sobre</a>
-          <a class="link" href="">Nossos Frota</a>
-          <a class="link" href="">Vantagens</a>
-          <a class="link" href="">Global</a>
-        </div>
-        <div class="w-full flex justify-between">
-          <a href="">+55 11 99999 9999</a>
-          <a href="">info@companhiaaerea.com</a>
-        </div>
-      </header>
       <div class="z-30 conteudo flex flex-col">
-        <div class="hero-text flex flex-col justify-between h-170 lg:h-120 w-100 lg:w-full font-medium text-5xl lg:text-8xl mt-18 lg:mt-30">
+        <div
+          class="hero-text flex flex-col justify-between h-170 lg:h-120 w-100 lg:w-full font-medium text-5xl lg:text-8xl mt-18 lg:mt-30">
           <h1 class="w-xs lg:w-2xl">Nós somos movimento</h1>
           <h1 class="self-end text-end w-xs lg:w-2xl">Nós somos distinção</h1>
         </div>
@@ -96,16 +110,20 @@
           </div>
         </div>
       </div>
-      <div class="flex fixed self-center bottom-8 lg:bottom-12 z-40 justify-center">
-        <div class="btn bg-white/15 rounded-full px-2 w-fit gap-3 flex flex-row">
-          <button class="py-3 px:5 lg:px-4 text-sm lg:text-base text-black my-2 rounded-full font-semibold bg-white cursor-pointer"><p class="px-5 lg:px-4 whitespace-nowrap lg:whitespace-normal">Reserve o Voo</p></button>
+      <div class="btn flex fixed self-center bottom-8 lg:bottom-12 z-40 justify-center">
+        <div class="bg-white/15 rounded-full px-2 w-fit gap-3 flex flex-row">
+          <button
+            class="py-3 px:5 lg:px-4 text-sm lg:text-base text-black my-2 rounded-full font-semibold bg-white cursor-pointer">
+            <p class="px-5 lg:px-4 whitespace-nowrap lg:whitespace-normal">Reserve o Voo</p>
+          </button>
           <button id="aviao-btn"
             class="flex items-center justify-center py-3 px-3.5 text-black my-2 rounded-full font-semibold bg-white overflow-hidden cursor-pointer"><i
               id="aviao" class="fa-solid fa-plane -rotate-45"></i></button>
         </div>
       </div>
     </section>
-    <div class="absolute flex justify-center items-center h-dvh text-white font-medium mx-10 lg:mx-30 text-3xl lg:text-7xl text-balance">
+    <div
+      class="absolute flex justify-center items-center h-dvh text-white font-medium mx-10 lg:mx-30 text-3xl lg:text-7xl text-balance">
       <p id="text">Mais do que um voo, entregamos uma experiência pensada nos mínimos detalhes.
         Da escolha da aeronave ao serviço a bordo, tudo é cuidadosamente planejado para refletir seu estilo de vida, seu
         tempo e sua forma de viver o mundo.</p>
@@ -118,12 +136,13 @@
 
 
 
-  <script src="./js/script.js"></script>
   <script src="https://kit.fontawesome.com/b522bdfe69.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/SplitText.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/Observer.min.js"></script>
+
+  <script src="./js/script.js"></script>
 </body>
 
 </html>

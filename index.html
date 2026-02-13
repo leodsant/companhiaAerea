@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Companhia Aérea</title>
-  <link href="./css/output.css" rel="stylesheet">
+  <link href="./dist/css/output.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -13,19 +13,19 @@
     rel="stylesheet">
 </head>
 
-<body class="font">
+<body class="font overflow-x-hidden">
 
   <div id="cursor" class="pointer-events-none rounded-full w-20 h-20 -left-9 -top-7 mix-blend-exclusion bg-white hidden lg:block fixed z-50"></div>
 
   <main class="relative h-dvh w-full overflow-hidden">
 
     <div class="absolute inset-0 z-0">
-      <video class="object-fill h-dvh w-full pointer-events-none" autoplay muted loop src="../videos/video.mp4"></video>
+      <video class="object-fill h-dvh w-full pointer-events-none" autoplay muted loop src="./videos/video.mp4"></video>
     </div>
 
     <div class="absolute inset-0 z-20 flex items-center justify-center">
       <div id="janela"
-        class="h-dvh w-full bg-center bg-cover scale-100 lg:scale-130 pointer-events-none"><img src="./images/janela.png" alt=""></div>
+        class="h-dvh w-full bg-center bg-cover scale-100 lg:scale-130 pointer-events-none"><img src="./dist/images/janela.png" alt=""></div>
     </div>
 
     <div id="menu-btn"
@@ -129,10 +129,6 @@
     </div>
   </main>
 
-  <section class="h-dvh">
-
-  </section>
-
 
 
   <script src="https://kit.fontawesome.com/b522bdfe69.js" crossorigin="anonymous"></script>
@@ -141,7 +137,7 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/SplitText.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/Observer.min.js"></script>
 
-  <script src="./js/script.js"></script>
+  <script src="./dist/js/script.js"></script>
 </body>
 
 </html>
